@@ -1,9 +1,32 @@
 import { createStore } from 'redux';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   counter: 0,
   showCounter: true,
 };
+
+createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment(state) {
+      state.counter++;
+    },
+    decrement(state) {
+      state.counter--;
+    },
+    increase(state, action) {
+      state.counter = state.counter + action.amount;
+    },
+    toggleCounter(state) {
+      state.showCounter = !state.showCounter;
+    },
+  },
+});
+
+// reducer function returns brand new object state. It DOES NOT merge it to the existing state
+// NEVER mutate state outside always return a brand new state
 const counterReducer = (state = initialState, action) => {
   if (action.type === 'increment') {
     return {
