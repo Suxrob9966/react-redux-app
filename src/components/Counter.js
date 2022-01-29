@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'; // we need useSelector() hook to read data from our redux store. we need connect to use redux in class based components
-import { counterActions } from '../store';
+import { counterActions } from '../store/counter';
 import classes from './Counter.module.css';
 
 const Counter = () => {
