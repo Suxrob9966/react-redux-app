@@ -5,8 +5,8 @@ import classes from './Counter.module.css';
 const Counter = () => {
   const dispatch = useDispatch(); // dispatch becomes a function
 
-  const counter = useSelector((state) => state.counter); // useSelector() hook needs a function with state parameter from which we then extract the value that we need
-  const show = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter); // useSelector() hook needs a function with state parameter from which we then extract the value that we need
+  const show = useSelector((state) => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment()); // redux toolkit syntax
